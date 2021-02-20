@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/juli4n/ptyrpc/internal/api";
+
+package ptyrpc;
+
+service PtyService {
+  rpc OnEvent (stream OnEventRequest) returns (stream OnEventResponse) {}
+}
+
+message OnEventRequest {
+  bytes buffer = 1;
+}
+
+message OnEventResponse {
+  bytes buffer = 1;
+}
